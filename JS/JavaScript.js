@@ -6,7 +6,11 @@ function ler(){
 
     data1 = new Date(document.getElementById("data1").value);
     
-    data2 = new Date(document.getElementById("data2").value);;
+    data2 = new Date(document.getElementById("data2").value);
+    
+    // Ajusta as datas para considerar o fuso horário local
+    data1.setTime(data1.getTime() + data1.getTimezoneOffset() * 60 * 1000);
+    data2.setTime(data2.getTime() + data2.getTimezoneOffset() * 60 * 1000);
 
     apresentarHtml();
 }
